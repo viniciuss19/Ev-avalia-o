@@ -199,15 +199,63 @@ namespace Henzo_e_Vinícius_Avaliação
 
 
         }
-        
+
         public static void ListarVeiculosDisponíveis()
         {
-            if (locadoraselecionada = "")
+            if (locadoraselecionada == "")
             {
-                Console.WriteLine("VOCE DEVE SELECIONAR UMA LOCADORA PRIMEIRO")
+                Console.WriteLine("VOCE DEVE SELECIONAR UMA LOCADORA PRIMEIRO");
+            }
+            else
+            {
+                foreach (Locadora loc in RedeLocadoras.Locadoras)
+                {
+                    if (loc.nome == locadoraselecionada)
+                    {
+                        Locadora.ListarVeiculosDisponiveis(locadoraselecionada);
+                    }
+                }
+            }
+        }
+            public static void ListarCarrosDisponíveis()
+            {
+                if (locadoraselecionada == "")
+                {
+                    Console.WriteLine("Selecione uma locadora primeiro");
+                }
+                else
+                {
+                    foreach (Locadora loc in RedeLocadoras.Locadoras)
+                    {
+
+                        if (loc.Nome == locadoraselecionada)
+                        {
+                            Locadora.ListarCarrosDisponiveis(locadoraselecionada);
+                        }
+                    }
+                }
             }
 
-        }
+            public static void ListarAviõesDisponíveis()
+            {
+                if (locadoraselecionada == "")
+                {
+                    Console.WriteLine("Selecione uma locadora primeiro");
+                }
+                else
+                {
+                    foreach (Locadora loc in RedeLocadoras.Locadoras)
+                    {
+
+                        if (loc.Nome == locadoraselecionada)
+                        {
+                            Locadora.ListarAviõesDisponiveis(locadoraselecionada);
+                        }
+                    }
+                }
+            }
+
+      
 
     }
 }
