@@ -6,6 +6,13 @@ namespace Henzo_e_Vinícius_Avaliação
 {
     class ConsoleLocadoras
     {
+        public static void main()
+        {
+
+            RedeLocadoras.AdicionarLocadora(new Locadora("Locadora vinao", "Av higienopolis 280"));
+            RedeLocadoras.AdicionarLocadora(new Locadora("Locadora Henzo", "Av Juscelino Kubitscheck"));
+            MostrarMenu();
+        }
         public static void MostrarMenu()
         {
             
@@ -58,7 +65,7 @@ namespace Henzo_e_Vinícius_Avaliação
                     ListarCarrosDisponíveis();
                     break;
                 case 8:
-                    ListaAviõesDisponíveis();
+                    ListarAviõesDisponíveis();
                     break;
                 case 9:
                     ListarTodosOsVeiculos();
@@ -108,28 +115,29 @@ namespace Henzo_e_Vinícius_Avaliação
         {
             string LocRemove;
             ListarLocadoras();
-            Console.WriteLine("QUAL LOCADORA DESEJA REMOVER DO SISTEMA? :")
+            Console.WriteLine("QUAL LOCADORA DESEJA REMOVER DO SISTEMA? :");
             LocRemove = Console.ReadLine();
 
             Console.WriteLine($"{LocRemove} foi removida do sistema");
         }
 
         public static int idveiculo = 0;
+        public static string clienteselecionado = "";
         public static string locadoraselecionada = "";
         public static string carroselecionado = "";
-        public static string veículoselecionado = "";
+        public static string veiculoselecionado = "";
         public static void SelecionarLocadora()
         {
             locadoraselecionada = "";
             string locselecionar;
             ListarLocadoras();
-            Console.WriteLine("Digite a locadora que você quer adicionar: ")
+            Console.WriteLine("Digite a locadora que você quer adicionar: ");
             locselecionar = Console.ReadLine();
             foreach (Locadora l in RedeLocadoras.Locadoras)
             {
                 if (l.Nome.Equals(locselecionar))
                 {
-                    locadoraselecionada = l.nome;
+                    locadoraselecionada = l.Nome;
                     Console.WriteLine($"{locselecionar} foi selecionada");
                 }
                 if (locadoraselecionada == "")
@@ -169,7 +177,7 @@ namespace Henzo_e_Vinícius_Avaliação
             }
             if (tipoCA == "Avião")
             {
-                Console.WriteLine("Digite as horas de voo do avião: ")
+                Console.WriteLine("Digite as horas de voo do avião: ");
                     TipoVeic = "Aviao";
                 HorasVoo = float.Parse(Console.ReadLine());
 
@@ -179,7 +187,7 @@ namespace Henzo_e_Vinícius_Avaliação
                 TipoVeic = "Carro";
                 Console.WriteLine("Digite a placa do carro: ");
                 placa = Console.ReadLine();
-                Console.WriteLine("Digite a quilometragem do carro: ")
+                Console.WriteLine("Digite a quilometragem do carro: ");
                     quilometragem = float.Parse(Console.ReadLine());
             }
 
@@ -190,9 +198,9 @@ namespace Henzo_e_Vinícius_Avaliação
 
             foreach (Locadora l in RedeLocadoras.Locadoras)
             {
-                if (l.nome.Equals(locadoraselecionada))
+                if (l.Nome.Equals(locadoraselecionada))
                 {
-                    l.AdicionarVeiculoAluguel(new VeículoAluguel(idveiculo.ToString(), locadoraselecionada, TipoVeic, HorasVoo, placa, quilometragem, marca, modelo, false));
+                    l.AdicionarVeiculoAluguel(new VeiculoAluguel(idveiculo.ToString(), locadoraselecionada, TipoVeic, HorasVoo, placa, quilometragem, marca, modelo, false));
                     idveiculo += 1;
                 }
             }
@@ -210,7 +218,7 @@ namespace Henzo_e_Vinícius_Avaliação
             {
                 foreach (Locadora loc in RedeLocadoras.Locadoras)
                 {
-                    if (loc.nome == locadoraselecionada)
+                    if (loc.Nome == locadoraselecionada)
                     {
                         Locadora.ListarVeiculosDisponiveis(locadoraselecionada);
                     }
@@ -240,7 +248,7 @@ namespace Henzo_e_Vinícius_Avaliação
             {
                 if (locadoraselecionada == "")
                 {
-                    Console.WriteLine("Selecione uma locadora primeiro");
+                    Console.WriteLine("VOCE PRECISA SELECIONAR UMA LOCADORA!");
                 }
                 else
                 {
@@ -255,7 +263,250 @@ namespace Henzo_e_Vinícius_Avaliação
                 }
             }
 
-      
+        public static void ListarTodosOsVeiculos()
+        {
+            if (locadoraselecionada == "")
+            {
+                Console.WriteLine("VOCE PRECISA SELECIONAR UMA LOCADORA!");
+            }
+            else
+            {
+                foreach (Locadora loc in RedeLocadoras.Locadoras)
+                {
+                    if (loc.Nome == locadoraselecionada)
+                    {
+                        Locadora.ListarTodosOsVeículos(locadoraselecionada);
+                    }
+                }
+            }
+        }
+
+        public static void CadastrarCliente()
+        {
+            string ncliente;
+            string cpf;
+            Console.WriteLine("Digite o nome do cliente: ");
+            ncliente = Console.ReadLine();
+            Console.WriteLine("Digite o cpf do cliente");
+            cpf = Console.ReadLine();
+            RedeLocadoras.Clientes.Add(new Cliente(ncliente, cpf));
+            Console.WriteLine($"O cliente {ncliente} foi adicionado ao sistema");
+        }
+        public static void ListarClientes()
+        {
+            Console.WriteLine("-");
+            Console.WriteLine("Clientes cadastrados: ");
+            foreach (Cliente c in RedeLocadoras.Clientes)
+            {
+                Console.WriteLine($"O Nome do cliente é: {c.Nome} e o CPF é :{c.Cpf}");
+            }
+
+        }
+        public static void SelecionarCliente()
+        {
+            clienteselecionado = "";
+            string reset = clienteselecionado;
+
+            ListarClientes();
+            Console.WriteLine("Digite o cliente que você deseja selecionar");
+            string selecao = Console.ReadLine();
+            foreach (Cliente c in RedeLocadoras.Clientes)
+            {
+                if (c.Nome.Equals(selecao))
+                {
+                    clienteselecionado = c.Nome;
+                    Console.WriteLine($"{c.Nome} foi selecionado com sucesso.");
+                }
+
+            }
+            if (clienteselecionado == "")
+            {
+                Console.WriteLine($"Esse cliente: {selecao} não foi encontrado ou não existe!");
+                clienteselecionado = reset;
+            }
+        }
+
+
+         public static void IniciarAluguel()
+        {
+            bool search = false;
+
+            string idveicalug;
+            if(clienteselecionado == "")
+            {
+                Console.WriteLine("VOCE NECESSITA SELECIONAR UM CLIENTE");
+                return;
+            }
+            if(locadoraselecionada ==  "")
+            {
+                Console.WriteLine("VOCE NECESSITA SELECIONAR UMA LOCADORA");
+                return;
+            }
+            Lista:
+            Locadora.ListarVeiculosDisponiveis(locadoraselecionada);
+
+            Console.WriteLine("Digite o ID do veículo que você deseja alugar");
+            idveicalug = Console.ReadLine();
+            
+
+            foreach(VeiculoAluguel veic in Locadora.VeiculosAluguel)
+            {
+
+
+                if (veic.Id.Equals(idveicalug))
+                {
+                    if (veic.Alugado == false)
+                    {
+                        search = true;
+                        if (veic.Tipo == "Carro")
+                        {
+                            Console.WriteLine($"ID DO carro é: {veic.Id}" +
+                                $" a placa dele é {veic.Placa}" +
+                                $" ele é do tipo: {veic.Tipo}" +
+                                $" sua quilometragem é de : {veic.Quilometragem}" +
+                                $" é da marca: {veic.Marca}" +
+                                $" é do modelo: {veic.Modelo}" +
+                                $" ele está disponivel para ser alugado");
+                        }
+                        if (veic.Tipo == "Avião")
+                        {
+                            Console.WriteLine($"O ID do veículo é: {veic.Id}" +
+                                $"Ele é do tipo: {veic.Tipo}" +
+                                $"Horas de voo: {veic.Horasvoo}" +
+                                $"Ele é da marca: {veic.Marca}" +
+                                $"Ele é do modelo: {veic.Modelo}" +
+                                $"E ele está disponivel para ser alugado");
+                        }
+                        veiculoselecionado = veic.Id;
+                        Console.WriteLine("Por quantos dias deseja alugar o veículo");
+                        int diasalug = int.Parse(Console.ReadLine());
+                        var today = DateTime.Now;
+                        var DiasDoAluguel = today.AddDays(diasalug);
+                        Locadora.AlugueisAtuais.Add(new Aluguel(veic.Id, clienteselecionado, locadoraselecionada, today, DiasDoAluguel));
+
+                        Console.WriteLine($"---------------------" +
+                            $"O aluguel foi finalizado!" +
+                            $"O aluguel foi feito pelo {clienteselecionado}" +
+                            $"na locadora {locadoraselecionada}" +
+                            $"ele começa na data {today}" +
+                            $"e tem que ser devolvido na data {DiasDoAluguel}");
+                        veic.Alugado = true;
+                    }
+                
+                }
+                if (search == false)
+                {
+                    Console.WriteLine($"NÃO FOI ENCONTRADO OU NÃO EXISTE ESSE VEÍCULO NA {locadoraselecionada}");
+                    goto Lista;
+                        
+                }
+            }
+
+        }
+        public static void DevolverVeiculo()
+        {
+            ListarAlugueis();
+            Devolução:
+            string iddevolucao = "";
+
+            Console.WriteLine("Digite o ID do aluguel que você que devolver: ");
+            iddevolucao = Console.ReadLine();
+            bool search = false;
+
+            foreach (Aluguel alu in Locadora.AlugueisAtuais)
+            {
+                if (alu.Id.Equals(iddevolucao))
+                {
+                    Console.WriteLine($"O Aluguel de id: {alu.Id} foi devolvido para a {alu.Locadora}");
+                    foreach (VeiculoAluguel v in Locadora.VeiculosAluguel)
+                    {
+                        if (v.Id.Equals(iddevolucao))
+                        {
+                            v.Alugado = false;
+                            alu.Desativado = true;
+                            alu.Id = "0";
+                        }
+                    }
+                    search = true;
+                }
+
+            }
+            if (search == false)
+            {
+                Console.WriteLine($"Nenhum aluguel com esse ID foi encontrado");
+                goto Devolução;
+            }
+        }
+        public static void ListarAlugueis()
+        {
+            Console.WriteLine("Esses são os alugueis cadastrados no momento");
+            foreach(Aluguel alu in Locadora.AlugueisAtuais)
+            {
+                foreach(VeiculoAluguel veic in Locadora.VeiculosAluguel)
+                {
+                    if (veic.Id.Equals(alu.Id))
+                    {
+                        if(veic.Alugado = true | alu.Desativado == false)
+                        {
+                            Console.WriteLine($"O id do aluguel é : {alu.Id}\n" +
+                                $"Veículo: {veic.Marca} {veic.Modelo}\n" +
+                                $"O cliente que alugou foi: {alu.Cliente}\n" +
+                                $"Foi locado pela locadora: {alu.Locadora}\n" +
+                                $"---------------------------------------" +
+                                $"O aluguel começa no dia: {alu.Inicio}\n" +
+                                $"e tem que ser devolvido no dia: {alu.Final}");
+                        }
+                    }
+                }
+            }
+        }
+
+        public static void AluguelPorCliente()
+        {
+            
+            ListarClientes();
+            Console.WriteLine("Qual dos clientes você deseja listar");
+            string cselecionado = Console.ReadLine();
+            int cont = 0;
+            bool search = false;
+
+            foreach (Cliente c in RedeLocadoras.Clientes)
+            {
+                if (c.Nome.Equals(cselecionado))
+                {
+                    search = true;
+                }
+            }
+            foreach (Aluguel a in Locadora.AlugueisAtuais)
+            {
+                if (a.Cliente.Equals(cselecionado))
+                {
+                    search = true;
+                    Console.WriteLine($"ID Aluguel: {a.Id}" +
+                        $"Foi alugado pelo cliente: {a.Cliente}" +
+                        $"Começa no dia: {a.Inicio}" +
+                        $"Finaliza no dia: {a.Final}");
+                    cont++;
+                }
+            }
+            if (search = false)
+            {
+                Console.WriteLine("Esse cliente não foi encontrado no sistema");
+                return;
+            }
+            if (cont == 0)
+            {
+                Console.WriteLine($"Não foi encontrado nenhum aluguel no nome {cselecionado}");
+            }
+        }
 
     }
-}
+
+
+        
+
+
+
+
+    }
+
