@@ -15,36 +15,37 @@ namespace Henzo_e_Vinícius_Avaliação
         }
         public static void MostrarMenu()
         {
-            
-            Console.WriteLine($"Console das Locadoras\n" +
-                $"----------------------------------------------" +
-                $"Digite os números para acessar os métodos" +
-                $"1 - Criar uma Locadora" +
-                $"2 - Remover uma Locadora" +
-                $"3 - Listar as Locadoras" +
-                $"4 - Selecionar Locadora" +
-                $"5 - Adícionar Veículo" +
-                $"6 - Listar os Veículos disponíveis" +
-                $"---/-------------/---------/----" +
-                
 
-                $"7 - Listar os Carros disponíveis" +
-                $"8 - Listar os Aviões disponíveis" +
-                $"9 - Listar todos os tipos de veículos" +
-                $"-------/--------------/-----" +
-                $"10 - Cadastrar Cliente" +
-                $"11 - Listar os Clientes" +
-                $"12 - Selecionar um Cliente" +
-                $"-------/------/-------/" +
-                $"13 - Iniciar Aluguel" +
-                $"14 - Devolver Veículo" +
-                $"15 - Listar Alugueis" +
-                $"16 - Listar Alugueis do Cliente");
+            Console.WriteLine($"Console das Locadoras");
+            Console.WriteLine("----------------------------------------------");
+            Console.WriteLine("Digite os números para acessar os métodos");
+            Console.WriteLine("1 - Criar uma Locadora");
+            Console.WriteLine("2 - Remover uma Locadora");
+            Console.WriteLine("3 - Listar as Locadoras");
+            Console.WriteLine("4 - Selecionar Locadora");
+            Console.WriteLine("5 - Adícionar Veículo");
+            Console.WriteLine("6 - Listar os Veículos disponíveis");
+            Console.WriteLine("----------------------------------------------");
+
+
+            Console.WriteLine("7 - Listar os Carros disponíveis");
+            Console.WriteLine("8 - Listar os Aviões disponíveis");
+            Console.WriteLine("9 - Listar todos os tipos de veículos");
+            Console.WriteLine("-------/--------------/-----");
+            Console.WriteLine("10 - Cadastrar Cliente");
+            Console.WriteLine("11 - Listar os Clientes");
+            Console.WriteLine("12 - Selecionar um Cliente");
+            Console.WriteLine("-------/------/-------/");
+            Console.WriteLine("13 - Iniciar Aluguel");
+            Console.WriteLine("14 - Devolver Veículo");
+            Console.WriteLine("15 - Listar Alugueis");
+            Console.WriteLine("16 - Listar Alugueis do Cliente");
             int comando = int.Parse(Console.ReadLine());
             switch (comando)
             {
                 case 1:
                     CriarLocadora();
+                   
                     break;
                 case 2:
                     RemoverLocadora();
@@ -105,6 +106,7 @@ namespace Henzo_e_Vinícius_Avaliação
             Console.WriteLine("Digite o endereço da locadora que você deseja criar: ");
             endereço = Console.ReadLine();
             RedeLocadoras.AdicionarLocadora(new Locadora(nome, endereço));
+            Console.WriteLine($"A locadora {nome} que fica no endereço {endereço} foi criada com sucesso! $");
         }
         public static void ListarLocadoras()
         {
