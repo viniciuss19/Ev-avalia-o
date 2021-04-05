@@ -11,7 +11,12 @@ namespace Henzo_e_Vinícius_Avaliação
 
             RedeLocadoras.AdicionarLocadora(new Locadora("Locadora vinao", "Av higienopolis 280"));
             RedeLocadoras.AdicionarLocadora(new Locadora("Locadora Henzo", "Av Juscelino Kubitscheck"));
-            MostrarMenu();
+            int keep = 0;
+            while (keep == 0)
+            {
+                MostrarMenu();
+            }
+          
         }
         public static void MostrarMenu()
         {
@@ -133,7 +138,7 @@ namespace Henzo_e_Vinícius_Avaliação
             locadoraselecionada = "";
             string locselecionar;
             ListarLocadoras();
-            Console.WriteLine("Digite a locadora que você quer adicionar: ");
+            Console.WriteLine("Digite a locadora que você quer selecionar: ");
             locselecionar = Console.ReadLine();
             foreach (Locadora l in RedeLocadoras.Locadoras)
             {
