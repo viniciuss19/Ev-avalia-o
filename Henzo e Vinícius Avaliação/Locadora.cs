@@ -63,11 +63,11 @@ namespace Henzo_e_Vinícius_Avaliação
                 {
                     if (v.Tipo == "Carro")
                     {
-                        if (!v.Alugado) Console.WriteLine($"ID: {v.Id} | Tipo: {v.Tipo} | Placa: {v.Placa} | Quilometragem: {v.Quilometragem} | Marca: {v.Marca} | Modelo: {v.Modelo} | Situação: Disponível");
+                        if (v.Alugado == false) Console.WriteLine($"ID: {v.Id}   | Tipo: {v.Tipo}   | Placa: {v.Placa}   | Quilometragem: {v.Quilometragem} |  Marca: {v.Marca}  |  Modelo: {v.Modelo}  |  Situação: Disponível");
                     }
                     if (v.Tipo == "Avião")
                     {
-                        if (!v.Alugado) Console.WriteLine($"ID: {v.Id} | Tipo: {v.Tipo} | Horas de Voo: {v.Horasvoo} | Marca: {v.Marca} | Modelo: {v.Modelo} | Situação: Disponível");
+                        if (v.Alugado == false) Console.WriteLine($"ID: {v.Id} | Tipo: {v.Tipo} | Horas de Voo: {v.Horasvoo} | Marca: {v.Marca} | Modelo: {v.Modelo} | Situação: Disponível");
                     }
                 }
 

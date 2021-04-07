@@ -41,7 +41,9 @@ namespace Henzo_e_Vinícius_Avaliação
             { 
                 foreach (Locadora loc in Locadoras)
                 {
+                    
                     Console.WriteLine($"O Nome da locadora é: {loc.Nome} e o  endereço da locadora é : {loc.Endereço}");
+                    
                 }
 
                 Console.WriteLine("");

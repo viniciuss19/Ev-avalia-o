@@ -11,6 +11,7 @@ namespace Henzo_e_Vinícius_Avaliação
 
             RedeLocadoras.AdicionarLocadora(new Locadora("Locadora vinao", "Av higienopolis 280"));
             RedeLocadoras.AdicionarLocadora(new Locadora("Locadora Henzo", "Av Juscelino Kubitscheck"));
+            new VeiculoAluguel("1", "Locadora vinao", "Avião", 1000, "", 0, "Boeing", "747", false);
             int keep = 0;
             while (keep == 0)
             {
@@ -111,7 +112,9 @@ namespace Henzo_e_Vinícius_Avaliação
             Console.WriteLine("Digite o endereço da locadora que você deseja criar: ");
             endereço = Console.ReadLine();
             RedeLocadoras.AdicionarLocadora(new Locadora(nome, endereço));
-            Console.WriteLine($"A locadora {nome} que fica no endereço {endereço} foi criada com sucesso! $");
+            Console.WriteLine("");
+            Console.WriteLine($"A locadora {nome} que fica no endereço {endereço} foi criada com sucesso! ");
+                Console.WriteLine("");
         }
         public static void ListarLocadoras()
         {
@@ -122,10 +125,13 @@ namespace Henzo_e_Vinícius_Avaliação
         {
             string LocRemove;
             ListarLocadoras();
+            Console.WriteLine("");
             Console.WriteLine("QUAL LOCADORA DESEJA REMOVER DO SISTEMA? :");
             LocRemove = Console.ReadLine();
-
+            Console.WriteLine("");
             Console.WriteLine($"{LocRemove} foi removida do sistema");
+            Console.WriteLine("");
+
         }
 
         public static int idveiculo = 0;
@@ -139,13 +145,15 @@ namespace Henzo_e_Vinícius_Avaliação
             string locselecionar;
             ListarLocadoras();
             Console.WriteLine("Digite a locadora que você quer selecionar: ");
-            locselecionar = Console.ReadLine();
+            locadoraselecionada = Console.ReadLine();
             foreach (Locadora l in RedeLocadoras.Locadoras)
             {
-                if (l.Nome.Equals(locselecionar))
+                if (l.Nome.Equals(locadoraselecionada))
                 {
                     locadoraselecionada = l.Nome;
-                    Console.WriteLine($"{locselecionar} foi selecionada");
+                    Console.WriteLine("");
+                    Console.WriteLine($"{locadoraselecionada} foi selecionada");
+                    Console.WriteLine("");
                 }
                 if (locadoraselecionada == "")
                 {
@@ -172,24 +180,20 @@ namespace Henzo_e_Vinícius_Avaliação
                 $"O veículo é um carro ou um avião? ");
 
             tipoCA = Console.ReadLine();
-            if (tipoCA != "Avião")
+            if (tipoCA != "Avião" && tipoCA != "Carro")
             {
                 Console.WriteLine("O SISTEMA SÓ SUPORTA CARROS E AVIÕES");
                 
             }
-            else if (tipoCA != "Carro")
-            {
-                Console.WriteLine("O SISTEMA SÓ SUPORTA CARROS E AVIÕES");
-                
-            }
-            if (tipoCA == "Avião")
+            
+           else if (tipoCA == "Avião")
             {
                 Console.WriteLine("Digite as horas de voo do avião: ");
                     TipoVeic = "Aviao";
                 HorasVoo = float.Parse(Console.ReadLine());
 
             }
-            if (tipoCA == "Carro")
+           else if (tipoCA == "Carro")
             {
                 TipoVeic = "Carro";
                 Console.WriteLine("Digite a placa do carro: ");
@@ -329,7 +333,7 @@ namespace Henzo_e_Vinícius_Avaliação
             if (clienteselecionado == "")
             {
                 Console.WriteLine($"Esse cliente: {selecao} não foi encontrado ou não existe!");
-                clienteselecionado = reset;
+                
             }
         }
 
