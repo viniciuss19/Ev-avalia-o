@@ -1,0 +1,13 @@
+C:\Users\Usuario\source\repos\Henzo e Vinícius Avaliação\Henzo e Vinícius Avaliação\bin\Debug\netcoreapp3.1\Henzo e Vinícius Avaliação.exe
+C:\Users\Usuario\source\repos\Henzo e Vinícius Avaliação\Henzo e Vinícius Avaliação\bin\Debug\netcoreapp3.1\Henzo e Vinícius Avaliação.deps.json
+C:\Users\Usuario\source\repos\Henzo e Vinícius Avaliação\Henzo e Vinícius Avaliação\bin\Debug\netcoreapp3.1\Henzo e Vinícius Avaliação.runtimeconfig.json
+C:\Users\Usuario\source\repos\Henzo e Vinícius Avaliação\Henzo e Vinícius Avaliação\bin\Debug\netcoreapp3.1\Henzo e Vinícius Avaliação.runtimeconfig.dev.json
+C:\Users\Usuario\source\repos\Henzo e Vinícius Avaliação\Henzo e Vinícius Avaliação\bin\Debug\netcoreapp3.1\Henzo e Vinícius Avaliação.dll
+C:\Users\Usuario\source\repos\Henzo e Vinícius Avaliação\Henzo e Vinícius Avaliação\bin\Debug\netcoreapp3.1\Henzo e Vinícius Avaliação.pdb
+C:\Users\Usuario\source\repos\Henzo e Vinícius Avaliação\Henzo e Vinícius Avaliação\obj\Debug\netcoreapp3.1\Henzo e Vinícius Avaliação.csprojAssemblyReference.cache
+C:\Users\Usuario\source\repos\Henzo e Vinícius Avaliação\Henzo e Vinícius Avaliação\obj\Debug\netcoreapp3.1\Henzo e Vinícius Avaliação.AssemblyInfoInputs.cache
+C:\Users\Usuario\source\repos\Henzo e Vinícius Avaliação\Henzo e Vinícius Avaliação\obj\Debug\netcoreapp3.1\Henzo e Vinícius Avaliação.AssemblyInfo.cs
+C:\Users\Usuario\source\repos\Henzo e Vinícius Avaliação\Henzo e Vinícius Avaliação\obj\Debug\netcoreapp3.1\Henzo e Vinícius Avaliação.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\Henzo e Vinícius Avaliação\Henzo e Vinícius Avaliação\obj\Debug\netcoreapp3.1\Henzo e Vinícius Avaliação.dll
+C:\Users\Usuario\source\repos\Henzo e Vinícius Avaliação\Henzo e Vinícius Avaliação\obj\Debug\netcoreapp3.1\Henzo e Vinícius Avaliação.pdb
+C:\Users\Usuario\source\repos\Henzo e Vinícius Avaliação\Henzo e Vinícius Avaliação\obj\Debug\netcoreapp3.1\Henzo e Vinícius Avaliação.genruntimeconfig.cache
