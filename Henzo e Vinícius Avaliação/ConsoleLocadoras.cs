@@ -171,16 +171,16 @@ namespace Henzo_e_Vinícius_Avaliação
             Console.WriteLine($"Você está prestes a adicionar um veículo na Locadora : {locadoraselecionada}" +
                 $"O veículo é um carro ou um avião? ");
 
-            tipoCA: tipoCA = Console.ReadLine();
+            tipoCA = Console.ReadLine();
             if (tipoCA != "Avião")
             {
                 Console.WriteLine("O SISTEMA SÓ SUPORTA CARROS E AVIÕES");
-                goto tipoCA;
+                
             }
             else if (tipoCA != "Carro")
             {
                 Console.WriteLine("O SISTEMA SÓ SUPORTA CARROS E AVIÕES");
-                goto tipoCA;
+                
             }
             if (tipoCA == "Avião")
             {
