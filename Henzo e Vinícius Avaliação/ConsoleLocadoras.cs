@@ -9,9 +9,22 @@ namespace Henzo_e_Vinícius_Avaliação
         public static void main()
         {
 
-            RedeLocadoras.AdicionarLocadora(new Locadora("Locadora vinao", "Av higienopolis 280"));
-            RedeLocadoras.AdicionarLocadora(new Locadora("Locadora Henzo", "Av Juscelino Kubitscheck"));
-            new VeiculoAluguel("1", "Locadora vinao", "Avião", 1000, "", 0, "Boeing", "747", false);
+            RedeLocadoras.AdicionarLocadora(new Locadora("vinao", "Av higienopolis 280"));
+            RedeLocadoras.AdicionarLocadora(new Locadora("Henzo", "Av Juscelino Kubitscheck"));
+            foreach (Locadora loc in RedeLocadoras.Locadoras)
+            {
+                if (loc.Nome == "vinao")
+                {
+
+                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("1", "vinao", "Carro", 0, "ARD-4508", 0, "Ford", "Fusion", false));
+
+                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("2", "vinao", "Avião", 1000, "", 0, "Boeing", "747", false));
+
+                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("3", "Henzo", "Carro", 0, "AOS-1234", 12000, "Wolksvagen", "Toyotinha", true));
+
+                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("4", "Henzo", "Avião", 245,"",0, "LATAM", "14-BIS", true));
+                }
+            }
             int keep = 0;
             while (keep == 0)
             {
@@ -223,20 +236,21 @@ namespace Henzo_e_Vinícius_Avaliação
         {
             if (locadoraselecionada == "")
             {
-                Console.WriteLine("VOCE DEVE SELECIONAR UMA LOCADORA PRIMEIRO");
+                Console.WriteLine("Selecione uma locadora primeiro");
             }
             else
             {
-                foreach (Locadora loc in RedeLocadoras.Locadoras)
+                foreach (Locadora locadora in RedeLocadoras.Locadoras)
                 {
-                    if (loc.Nome == locadoraselecionada)
+
+                    if (locadora.Nome == locadoraselecionada)
                     {
                         Locadora.ListarVeiculosDisponiveis(locadoraselecionada);
                     }
                 }
             }
         }
-            public static void ListarCarrosDisponíveis()
+        public static void ListarCarrosDisponíveis()
             {
                 if (locadoraselecionada == "")
                 {

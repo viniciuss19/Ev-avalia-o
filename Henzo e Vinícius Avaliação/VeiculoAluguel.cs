@@ -53,5 +53,6 @@ namespace Henzo_e_Vinícius_Avaliação
             Placa = placa;
             Locadora = locadora;
         }
+       
     }
 }

@@ -6,6 +6,8 @@ namespace Henzo_e_Vinícius_Avaliação
 {
     class Locadora
     {
+
+        
         private string _nome;
         public string Nome { get => _nome; set => _nome = value; }
         private string _endereço;
@@ -38,13 +40,13 @@ namespace Henzo_e_Vinícius_Avaliação
                     {
                         string AlugadoCarro = "";
                         if (v.Alugado) AlugadoCarro = "Alugado"; else AlugadoCarro = "Disponível";
-                        Console.WriteLine($"ID: {v.Id} | Tipo: {v.Tipo} | Placa: {v.Placa} | Quilometragem: {v.Quilometragem} | Marca: {v.Marca} | Modelo: {v.Modelo} | Situação: {AlugadoCarro}");
+                        Console.WriteLine($"ID: {v.Id} ||| Tipo: {v.Tipo} ||| Placa: {v.Placa} ||| Quilometragem: {v.Quilometragem} ||| Marca: {v.Marca} ||| Modelo: {v.Modelo} | Situação: {AlugadoCarro}");
                     }
                     if (v.Tipo == "Avião")
                     {
                         string AlugadoAvião = "";
                         if (v.Alugado) AlugadoAvião = "Alugado"; else AlugadoAvião = "Disponível";
-                        Console.WriteLine($"ID: {v.Id} | Tipo: {v.Tipo} | Horas de Voo: {v.Horasvoo} | Marca: {v.Marca} | Modelo: {v.Modelo} | Situação: {AlugadoAvião}");
+                        Console.WriteLine($"ID: {v.Id} ||| Tipo: {v.Tipo} ||| Horas de Voo: {v.Horasvoo} ||| Marca: {v.Marca} ||| Modelo: {v.Modelo} ||| Situação: {AlugadoAvião}");
                     }
                 }
 
@@ -63,22 +65,24 @@ namespace Henzo_e_Vinícius_Avaliação
                 {
                     if (v.Tipo == "Carro")
                     {
-                        if (v.Alugado == false) Console.WriteLine($"ID: {v.Id}   | Tipo: {v.Tipo}   | Placa: {v.Placa}   | Quilometragem: {v.Quilometragem} |  Marca: {v.Marca}  |  Modelo: {v.Modelo}  |  Situação: Disponível");
+                        if (!v.Alugado) Console.WriteLine($"ID: {v.Id} ||| Tipo: {v.Tipo} ||| Placa: {v.Placa} ||| Quilometragem: {v.Quilometragem} ||| Marca: {v.Marca} ||| Modelo: {v.Modelo} | Situação: Disponível");
                     }
                     if (v.Tipo == "Avião")
                     {
-                        if (v.Alugado == false) Console.WriteLine($"ID: {v.Id} | Tipo: {v.Tipo} | Horas de Voo: {v.Horasvoo} | Marca: {v.Marca} | Modelo: {v.Modelo} | Situação: Disponível");
+                        if (!v.Alugado) Console.WriteLine($"ID: {v.Id} ||| Tipo: {v.Tipo} ||| Horas de Voo: {v.Horasvoo} ||| Marca: {v.Marca} ||| Modelo: {v.Modelo} ||| Situação: Disponível");
                     }
                 }
 
             }
 
-            
-           
+        
 
-            
 
-        }
+
+
+
+
+    }
         public static void ListarCarrosDisponiveis(string Locadora)
         {
             Console.WriteLine("");
