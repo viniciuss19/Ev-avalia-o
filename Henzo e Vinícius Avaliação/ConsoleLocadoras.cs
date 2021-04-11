@@ -9,16 +9,16 @@ namespace Henzo_e_Vinícius_Avaliação
         public static void main()
         {
 
-            RedeLocadoras.AdicionarLocadora(new Locadora("vinao", "Av higienopolis 280"));
+            RedeLocadoras.AdicionarLocadora(new Locadora("Vinicius", "Av higienopolis 280"));
             RedeLocadoras.AdicionarLocadora(new Locadora("Henzo", "Av Juscelino Kubitscheck"));
             foreach (Locadora loc in RedeLocadoras.Locadoras)
             {
                 if (loc.Nome == "vinao")
                 {
 
-                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("1", "vinao", "Carro", 0, "ARD-4508", 0, "Ford", "Fusion", false));
+                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("1", "Vinicius", "Carro", 0, "ARD-4508", 0, "Ford", "Fusion", false));
 
-                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("2", "vinao", "Avião", 1000, "", 0, "Boeing", "747", false));
+                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("2", "Vinicius", "Avião", 1000, "", 0, "Gol", "Águia Metálica", true));
 
                     loc.AdicionarVeiculoAluguel(new VeiculoAluguel("3", "Henzo", "Carro", 0, "AOS-1234", 12000, "Wolksvagen", "Toyotinha", true));
 
